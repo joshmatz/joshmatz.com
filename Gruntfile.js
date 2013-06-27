@@ -6,29 +6,18 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-
 	// And let's configure those tasks
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		compass: {
 			production: {
 				options: {
-					sassDir: '_source/scss',
-					imagesDir: '_source/img',
-					fontsDir: '_source/fonts',
-					cssDir: '_production/assets/css',
+					sassDir: 'assets/styles',
+					imagesDir: 'assets/img',
+					fontsDir: 'assets/fonts',
+					cssDir: 'assets/styles',
 					noLineComments: true,
 					outputStyle: 'compact'
-				}
-			}
-			staging: {
-				options: {
-					sassDir: '_source/scss',
-					imagesDir: '_source/img',
-					fontsDir: '_source/fonts',
-					cssDir: '_staging/assets/css',
-					noLineComments: false,
-					outputStyle: 'expanded'
 				}
 			}
 		},
@@ -40,24 +29,10 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: '_source/',
+						cwd: 'assets/',
 						src: ['js/**/*.js'],
-						dest: '_production/assets/',
+						dest: 'js/',
 						ext: '.min.js'
-					}
-				]
-			},
-			staging: {
-				options: {
-					preserveComments: 'all',
-					compress: false
-				},
-				files: [
-					{
-						expand: true,
-						cwd: '_source/assets/',
-						src: ['js/**/*.js'],
-						dest: '_staging/assets/'
 					}
 				]
 			}
@@ -65,15 +40,10 @@ module.exports = function(grunt) {
 		copy: {
 			production: {
 				files: [
-					{ expand: true, cwd: '_source/', src: ['fonts/**/*'], dest: '_production/assets/' },
-				]
-			},
-			staging: {
-				files: [
-					{ expand: true, cwd: '_source/', src: ['fonts/**/*'], dest: '_staging/assets/' },
+					{ expand: true, cwd: 'assets/', src: ['fonts/**/*'], dest: '_production/assets/' },
 				]
 			}
-		},
+		}
 	});	
 
 
