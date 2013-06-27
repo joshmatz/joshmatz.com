@@ -220,6 +220,9 @@ pip-log.txt
 #Grunt
 node_modules/
 
+#Bower
+assets/components/
+
 ########################
 # sails
 ########################
@@ -230,7 +233,7 @@ node_modules/
 
 
 ########################
-# node.js / npm
+# node.js / npm / grunt
 ########################
 lib-cov
 *.seed
