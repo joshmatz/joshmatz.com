@@ -22,10 +22,7 @@
 //
 module.exports.routes = {
 	
-	// To route the home page to the "index" action of the "home" controller:
-	'/' : {
-		controller	: 'home'
-	}
+	
 
 	// If you want to set up a route only for a particular HTTP method/verb 
 	// (GET, POST, PUT, DELETE) you can specify the verb before the path:
@@ -66,4 +63,16 @@ module.exports.routes = {
 		action		: 'destroy'
 	}
 	*/
+
+	'/' : {
+		controller	: 'pages'
+	},
+	'/users/add': {
+		controller: 'users',
+		action: 'add'
+	},
+	'/users/login': {
+		controller: 'users',
+		action: 'login'
+	}
 };
