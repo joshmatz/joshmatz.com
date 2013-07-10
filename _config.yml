@@ -48,16 +48,9 @@ jekyll_sort:
     dest: blogposts
     include_categories:
     - blog
-  - src: posts
-    by: title
-    direction: up
-    dest: glossary
-    include_categories:
-    - glossary
 
 prose:
   media: 'assets'
-  rooturl: "_posts"
   siteurl: "http://www.joshmatz.com/"
   relativeLinks: "http://www.joshmatz.com/resources/prose/relativeLinks.jsonp"
   site:
