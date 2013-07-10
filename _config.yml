@@ -1,2 +1,15 @@
 name: Josh Matz
 pygments: true
+
+
+exclude:
+- .gitignore
+- .gitattributes
+- README.md
+- Gruntfile.js
+- joshmatz.sublime-project
+- joshmatz.sublime-workspace
+- package.json
+- Gemfile
+- Gemfile.lock
+- bower.json
