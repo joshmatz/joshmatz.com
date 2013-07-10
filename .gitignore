@@ -229,6 +229,7 @@ _site/
 #Bundler
 Gemfile
 Gemfile.lock
+.bundle/
 
 ########################
 # sails
