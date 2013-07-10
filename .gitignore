@@ -226,6 +226,10 @@ assets/components/
 #Jekyll
 _site/
 
+#Bundler
+Gemfile
+Gemfile.lock
+
 ########################
 # sails
 ########################
