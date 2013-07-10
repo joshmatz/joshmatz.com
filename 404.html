@@ -16,7 +16,7 @@ title: "Sorry, we can't find that page"
     <div class='input-append'>
       <form name='gsearch' method='get' action='{{site.baseurl}}{% unless page.lang == "en" %}/{{page.lang}}{% endunless %}/search'>
         <input id='404-search' title='{{t.[page.lang].utility.altsearch}}' class='nav-search span5' name='q' type='search' placeholder='{{post.search.title}}' autocomplete='off'>
-        {% include searchoptions.html %}
+        {% include footer.html %}
       </form>
     </div>
   </div>
