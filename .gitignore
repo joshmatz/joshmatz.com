@@ -223,6 +223,9 @@ node_modules/
 #Bower
 assets/components/
 
+#Jekyll
+_site/
+
 ########################
 # sails
 ########################
