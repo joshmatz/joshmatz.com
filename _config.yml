@@ -18,10 +18,6 @@ exclude:
 - Gemfile.lock
 - bower.json
 
-languages: &languages
-- name: 'English'
-  value: 'en'
-
 siteurl: 'http://www.joshmatz.com'
 
 jekyll_collect:
