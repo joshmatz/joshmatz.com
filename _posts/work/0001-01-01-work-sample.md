@@ -23,7 +23,7 @@ plan: "Marketplaces > Health  Insurance Marketplace"
 "process-step": "Awareness / Eligibility > Obtain General Program Information"
 "other-subject": Minimum Essential Coverage; Individual Responsibility; Assessment; Exemption
 "insurance-status": uninsured
-categories: articles
+categories: work
 tags: 
   - promote
 state: all

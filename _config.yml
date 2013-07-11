@@ -44,6 +44,12 @@ jekyll_sort:
     dest: blogposts
     include_categories:
     - blog
+  - src: posts
+    by: title
+    direction: up
+    dest: books
+    include_categories:
+    - books
 
 prose:
   media: 'assets'
