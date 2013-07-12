@@ -3,27 +3,35 @@
 /* Common
 /*
 /*****************************************************************************/
+@import "compass";
 
 /* Global Reset */
 * {
   margin: 0;
   padding: 0;
+  @include box-sizing(border-box);
 }
 
 html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   text-align: center;
+  font-size: 125%;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #444;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+  font-size: 300%; 
+  font-family: 'Merriweather', 'Times New Roman', serif;
+  font-weight: 900;
+  font-style: italic;
+  color: #222;
+}
 
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
 
 a         { color: #00a; }
 a:hover   { color: #000; }
@@ -33,6 +41,55 @@ table {
   font-size: inherit;
   font: 100%;
 }
+
+.nav__list {
+  list-style: none;
+  float: right;
+  text-align: right;
+}
+
+.nav__item {
+  display: inline-block;
+}
+
+.section--home-nav {
+  background-color: #172127;
+  color: #d0d5dd;
+}
+
+.section--home {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.section__title {
+  margin: 0 auto;
+  width: 30%;
+  text-align: center;
+  background-color: #172127;
+  color: white;
+  font-size: 33%;
+
+
+  h1{
+    color: white;
+
+    font-family: 'Source Sans Pro';
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;;
+  }
+}
+
+.container {
+  @include box-shadow(0px 3px 10px rgba(#172127, .5));
+
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+
 
 /*****************************************************************************/
 /*

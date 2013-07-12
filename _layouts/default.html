@@ -1,46 +1,181 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>{{ page.title }}</title>
+		<meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/assets/css/syntax.css">
+		<script type="text/javascript">
+			WebFontConfig = {
+				google: { families: [ 'Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic:latin', 'Source+Code+Pro:200,300,400,500,600,700,900:latin', 'Merriweather:400,300,300italic,400italic,700,700italic,900,900italic:latin', 'Merriweather+Sans:400,300,700,800,300italic,400italic,700italic,800italic:latin' ] }
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+				'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})(); 
+		</script>
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/assets/css/main.css">
+		<!-- syntax highlighting CSS -->
+		<link rel="stylesheet" href="/assets/css/syntax.css">
 
-    </head>
-    <body>
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="/assets/css/main.css">
 
-        <div class="container">
-          <div class="site">
-            <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
-            </div>
 
-                {{ content }}
+		<script src="http://localhost:35729/livereload.js"></script>
 
-            <div class="footer">
-              <div class="contact">
-                <p>
-                  Your Name<br />
-                  What You Are<br />
-                  your@email.com
-                </p>
-              </div>
-              <div class="contact">
-                <p>
-                  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
-                  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> <!-- /container -->
+	</head>
+	<body>
 
-    </body>
+		<div class="section section--home-nav">
+			<div class="nav__about-me">
+				<h1 class="about-me__title"><a href="/">{{ site.name }}</a></h1>
+				<p class="about-me__text">Lorem ipsum dolor sit amet consectetur elit amor. Dolor ipscing adipsco elit. Tu lador fargus mangipsing.</p>
+			</div>
+			<ul class="nav__list">
+				<li class="nav__item">
+					<a href="#" class="nav__link">Link</a>
+				</li>
+				<li class="nav__item">
+					<a href="#" class="nav__link">Link</a>
+				</li>
+				<li class="nav__item">
+					<a href="#" class="nav__link">Link</a>
+				</li>
+				<li class="nav__item">
+					<a href="#" class="nav__link">Link</a>
+				</li>
+				<li class="nav__item">
+					<a href="#" class="nav__link">Link</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="section section--home">
+			<div class="section__title">
+				<h1>Articles</h1>
+			</div>
+			<div class="container container--articles">
+				<div class="article article--main">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--secondary">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--secondary">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--tertiary">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--tertiary">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--tertiary">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--remaining">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--remaining">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--remaining">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--remaining">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--remaining">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--remaining">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+				<div class="article article--remaining">
+					<h2 class="article__title">Lorem ipsum dolor sit amet consectetur elit.</h2>
+					<p class="article__excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam. Aenean dapibus adipiscing odio, et tincidunt mi luctus in. Sed imperdiet ipsum id volutpat posuere. In fringilla quam dui, sed tincidunt purus viverra id. Pellentesque.</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="section section--more">
+			<div class="recent">
+				<h2 class="recent-title">Recently Read</h2>
+				<p class="recent-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam.</p>
+			</div>
+
+			<div class="recent">
+				<h2 class="recent-title">Recently Read</h2>
+				<p class="recent-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam.</p>
+			</div>
+
+			<div class="recent">
+				<h2 class="recent-title">Recently Read</h2>
+				<p class="recent-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at dictum dui, at auctor quam.</p>
+			</div>
+		</div>
+
+		<div class="section section--footer">
+			<p class="sosumi">&copy; Josh Matz</p>`
+		</div>
+
+		<div class="container">
+		  <div class="site">
+			<div class="header">
+			  <a class="extra" href="/">home</a>
+			</div>
+
+				{{ content }}
+
+			<div class="footer">
+			  <div class="contact">
+				<p>
+				  Your Name<br />
+				  What You Are<br />
+				  your@email.com
+				</p>
+			  </div>
+			  <div class="contact">
+				<p>
+				  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
+				  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
+				</p>
+			  </div>
+			</div>
+		  </div>
+		</div> <!-- /container -->
+
+	</body>
 </html>
