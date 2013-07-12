@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: ['assets/js/<%= pkg.name %>.js'],
-				dest: 'public/js/<%= pkg.name %>.js'
+				dest: '_site/assets/js/<%= pkg.name %>.js'
 			}
 	    },
 	    uglify: {
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: '<%= concat.dist.dest %>',
-				dest: 'public/js/<%= pkg.name %>.min.js'
+				dest: '_site/assets/js/<%= pkg.name %>.min.js'
 			}
 	    },
 	    jshint: {
@@ -42,7 +42,8 @@ module.exports = function(grunt) {
 				boss: true,
 				eqnull: true,
 				browser: true,
-				globals: {}
+				smarttabs: true,
+				globals: {jQuery: true, console: true, module: true }
 			},
 			gruntfile: {
 				src: 'Gruntfile.js'
@@ -54,12 +55,17 @@ module.exports = function(grunt) {
 	    compass: {
 	        dist: {                   // Target
 	        options: {              // Target options
-	          sassDir: 'assets/styles',
-	          cssDir: 'public/styles',
+	          sassDir: 'assets/scss',
+	          cssDir: 'assets/css',
 	          environment: 'development'
 	        }
 	      },
 	    },
+	    jekyll: {
+			server : {
+				
+			}
+		},
 	    watch: {
 			gruntfile: {
 				files: '<%= jshint.gruntfile.src %>',
@@ -70,17 +76,29 @@ module.exports = function(grunt) {
 				tasks: ['jshint:lib_test', 'qunit']
 			},
 			styles: {
-				files: 'assets/styles/**/*.scss',
-				tasks: ['compass'],
+				files: 'assets/scss/**',
+				tasks: ['compass', 'copy'],
 				options: {
 					livereload: true
 				}
 			},
-			html: {
-				files: 'views/**/*.ejs',
+			jekyll: {
+				files: ['_includes/**', '_layouts/**', '_posts/**'],
+				tasks: ['jekyll'],
 				options: {
 					livereload: true
 				}
+			}
+		},
+		copy: {
+			assets: {
+				files: [
+					{
+						expand: true, 
+						cwd: 'assets/css/', 
+						src: ['**'], 
+						dest: '_site/assets/css/'}, // makes all src relative to cwd
+				]
 			}
 		}
 	});
@@ -91,8 +109,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-jekyll');
 
 	// Default task.
-	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass']);
+	grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass', 'jekyll', 'copy']);
 
 };

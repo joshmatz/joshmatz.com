@@ -17,6 +17,9 @@ exclude:
 - Gemfile
 - Gemfile.lock
 - bower.json
+- node_modules
+- assets/scss
+- test
 
 siteurl: 'http://www.joshmatz.com'
 

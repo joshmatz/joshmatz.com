@@ -3,15 +3,16 @@
   "private": false,
   "version": "0.0.0",
   "description": "Flat build",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-watch": "~0.4.4",
-    "grunt-contrib-compass": "~0.3.0"
+    "grunt-contrib-compass": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-jekyll": "~0.3.8"
   },
   "repository": "https://github.com/joshmatz/joshmatz.com.git",
   "author": "Josh Matz",
