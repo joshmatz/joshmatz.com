@@ -281,3 +281,5 @@ config/local.js
 .env
 
 assets/css/main.css
+
+*.css
