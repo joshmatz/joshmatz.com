@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 				}
 			},
 			jekyll: {
-				files: ['_includes/**', '_layouts/**', '_posts/**'],
+				files: ['_includes/**', '_layouts/**', '_posts/**', 'assets/img'],
 				tasks: ['jekyll'],
 				options: {
 					livereload: true

@@ -10,8 +10,7 @@ $print-base-paragraph-elements:		$print-base-elements				!default;
 
 // ----- Mixins ----- //
 @mixin sb-paragraph {
-	margin-bottom: $sb-m-spacing;
-	@include hyphens(auto);
+	@include sb-baseline(1.25em, 1.5em);
 }
 
 @mixin sb-lead {

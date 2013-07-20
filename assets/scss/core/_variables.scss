@@ -10,9 +10,9 @@ $breakpoints: 	'sb-xl' (85em),
 
 
 // ----- Font stacks ----- //
-$sb-serif: Merriweather, Georgia, Times, "Times New Roman", serif;
-$sb-sans: Roboto, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-$sb-mono: Monaco, Consolas, "Lucida Console", monospace;
+$sb-serif: Merriweather, Georgia, Times, "Times New Roman", serif	!default;
+$sb-sans: Roboto, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif	!default;
+$sb-mono: Monaco, Consolas, "Lucida Console", monospace	!default;
 
 
 // ----- Useful numbers ----- //
