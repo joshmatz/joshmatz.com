@@ -283,3 +283,5 @@ config/local.js
 assets/css/main.css
 
 *.css
+
+local-config.php

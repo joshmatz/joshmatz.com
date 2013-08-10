@@ -1,5 +1,0 @@
-# robots.txt for joshmatz.
-User-agent: *
-# Directories
-Disallow: /api/
-Sitemap: http://www.joshmatz.com/sitemap.xml
