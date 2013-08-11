@@ -58,7 +58,34 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'name' => 'Link',
 				'id'   => $prefix . 'link',
 				'type' => 'text',
-			),			
+			),
+		),
+	);
+
+	$meta_boxes[] = array(
+		'id'         => 'resource',
+		'title'      => 'Resource',
+		'pages'      => array( 'resource', ), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name'    => 'Summary',
+				'id'      => $prefix . 'summary',
+				'type'    => 'wysiwyg',
+				'options' => array(	'textarea_rows' => 5, ),
+			),
+			array(
+				'name' => 'Link Button Title',
+				'id'   => $prefix . 'link_title',
+				'type' => 'text',
+			),
+			array(
+				'name' => 'Link',
+				'id'   => $prefix . 'link',
+				'type' => 'text',
+			),
 		),
 	);
 
