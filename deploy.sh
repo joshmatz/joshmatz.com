@@ -2,7 +2,7 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-# Clear our
+# Clear our previous build. This allows us to delete content
 cd public
 git rm -r *
 git commit -m "Cleaning before build"
