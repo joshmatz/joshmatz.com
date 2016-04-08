@@ -2,12 +2,15 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-# Build the project.
-hugo
-
-# Go To Public folder
+# Clear our
 cd public
-# Add changes to git.
+git rm -r *
+git commit -m "Cleaning before build"
+cd ..
+
+# Build the project and add changes
+hugo
+cd public
 git add -A
 
 # Commit changes.
