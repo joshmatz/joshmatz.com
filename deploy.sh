@@ -1,15 +1,18 @@
 #!/bin/bash
+# This commits /public to another repo
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-# Clear our previous build. This allows us to delete content
+# Clear our previous build of any unpublished content
 cd public
 git rm -r *
 git commit -m "Cleaning before build"
-cd ..
 
-# Build the project and add changes
+# Build the project
+cd ..
 hugo
+
+# Add the changes
 cd public
 git add -A
 
