@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "http://joshmatz.com/"
+baseurl = "/"
 languageCode = "en-us"
 title = "Josh Matz"
 theme = "custom-cactus"
