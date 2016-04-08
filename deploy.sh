@@ -14,7 +14,7 @@ echo -e "\033[0;32mClean complete...\033[0m"
 
 echo -e "\033[0;32mBuild started...\033[0m"
 # Build the project
-hugo
+# hugo
 
 echo -e "\033[0;32mBuild complete...\033[0m"
 
