@@ -1,7 +1,7 @@
 +++
 date = "2016-04-22T12:21:39-05:00"
 description = ""
-title = "take note"
+title = "Take Note"
 
 +++
 
