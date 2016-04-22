@@ -1,0 +1,53 @@
+/* Custom Portfolios */
+#post-446 {
+	background-color: transparent;
+}
+
+#post-439 {
+	background-color: transparent;
+}
+
+#post-415 {
+	background-color: transparent;
+}
+
+#post-413 {
+	background-color: transparent;
+}
+
+#post-408 {
+	background-color: transparent;
+}
+
+a,
+.entry-title a:hover,
+#logo a:hover,
+.slide-caption a:hover,
+.link-source a:hover,
+.comment-author a:hover,
+#commentform .required,
+.widget ul a:hover { color: #DA472A; }
+
+.zilla-direction-nav a:hover,
+.jp-play:hover,
+.jp-pause:hover,
+.jp-mute:hover,
+.jp-unmute:hover,
+.jp-play-bar,
+.jp-volume-bar-value,
+.jp-toggles a:hover { background-color: #DA472A; }
+
+.more-link:hover,
+button:hover,
+#submit:hover,
+.gform_next_button:hover,
+.gform_previous_button:hover,
+.gform_button:hover,
+more-link:hover,
+.zilla-dark .more-link:hover,
+.twitter-link:hover,
+.flickr_badge_image a,
+.zilla-dribbble-shots a { background: #DA472A; }
+
+.format-link .entry-title a:hover { border-bottom: 2px solid #DA472A; }
+
