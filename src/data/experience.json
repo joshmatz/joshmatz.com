@@ -1,0 +1,32 @@
+[
+  {
+    "company": "DocStation",
+    "role": "Co-Founder & CTO",
+    "years": "2018–present",
+    "description": "Building pharmacy care management software from the ground up."
+  },
+  {
+    "company": "InVision",
+    "role": "Lead Engineer",
+    "years": "2015–2018",
+    "description": "Led front-end teams on the world's leading design collaboration platform."
+  },
+  {
+    "company": "SourceClear",
+    "role": "Front-End Engineer",
+    "years": "2013–2015",
+    "description": "Early engineer at a security startup, shipping fast and wearing many hats."
+  },
+  {
+    "company": "Springbox",
+    "role": "UX Developer",
+    "years": "2012–2013",
+    "description": "Bridged design and engineering at a digital agency in Austin."
+  },
+  {
+    "company": "Freelance",
+    "role": "Designer & Developer",
+    "years": "2009–2012",
+    "description": "Cut my teeth building sites and brands for small businesses."
+  }
+]

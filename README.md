@@ -1,11 +1,25 @@
 # joshmatz.com
 
-You can view this at [joshmatz.github.io](https://joshmatz.github.io)
+Personal website built with [TanStack Start](https://tanstack.com/start), featuring an about page and blog.
 
-## Code structure
-This site's distributable build is in the `public` folder which is a submodule pointing to [joshmatz/joshmatz.github.io](https://github.com/joshmatz/joshmatz.github.io/tree/master).
+## Development
 
-The site is built with [Hugo](https://gohugo.io/), a fast static website generator.
+```bash
+npm install
+npm run dev
+```
 
-## Deploys
-./deploy.sh "Your optional commit message"
+Open [http://localhost:3000](http://localhost:3000).
+
+## Build
+
+```bash
+npm run build
+npm start
+```
+
+## Content
+
+- `src/content/posts/` — Blog posts as MDX files
+- `src/data/` — JSON data (about, social links, portfolio, etc.)
+- `public/images/` — Static images

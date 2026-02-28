@@ -1,0 +1,38 @@
+{
+  "name": "joshmatz.com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.1",
+    "@tanstack/react-router": "^1.163.2",
+    "@tanstack/react-start": "^1.163.2",
+    "@vitejs/plugin-react": "^5.1.4",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.575.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "tailwindcss": "^4.2.1",
+    "unified": "^11.0.5",
+    "vite": "^7.3.1",
+    "vite-tsconfig-paths": "^6.1.1",
+    "workers-og": "^0.0.27"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.25.6",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.69.0"
+  }
+}

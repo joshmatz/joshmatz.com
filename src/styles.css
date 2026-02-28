@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --color-warm-50: #faf9f7;
+  --color-warm-100: #f5f3f0;
+  --color-warm-200: #e8e4de;
+  --color-warm-300: #d4cec5;
+  --color-warm-400: #b0a898;
+  --color-warm-500: #8c8272;
+  --color-warm-600: #6b6355;
+  --color-warm-700: #4a4439;
+  --color-warm-800: #332f28;
+  --color-warm-900: #1c1a16;
+}
+
+body {
+  font-family: var(--font-serif);
+}
+
+/* Prose overrides for blog content */
+.prose {
+  --tw-prose-body: var(--color-warm-800);
+  --tw-prose-headings: var(--color-warm-900);
+  --tw-prose-links: var(--color-warm-900);
+  --tw-prose-bold: var(--color-warm-900);
+  --tw-prose-bullets: var(--color-warm-400);
+  --tw-prose-counters: var(--color-warm-500);
+  --tw-prose-hr: var(--color-warm-200);
+  --tw-prose-quotes: var(--color-warm-700);
+  --tw-prose-quote-borders: var(--color-warm-200);
+  --tw-prose-code: var(--color-warm-800);
+  --tw-prose-pre-bg: var(--color-warm-100);
+  --tw-prose-pre-code: var(--color-warm-800);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+}
+
+.prose a {
+  text-decoration-color: var(--color-warm-300);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--color-warm-900);
+}
+
+.prose img {
+  border-radius: 0.5rem;
+}
+
+.prose pre {
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-warm-200);
+}
+
+.prose code:not(pre code) {
+  background: var(--color-warm-100);
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left-width: 2px;
+}
+
+/* Homepage two-column layout */
+.homepage-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .homepage-top {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Experience list */
+.experience-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.experience-years {
+  color: var(--color-warm-400);
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-warm-200);
+  color: var(--color-warm-900);
+}

@@ -1,0 +1,30 @@
+{
+  "projects": [
+    {
+      "title": "Intelemedia",
+      "description": "Intelemedia, a company that unites multiple call centers into one platform, approached me in 2012 for assistance on redesigning their existing website. Not only was their website technologically dated but much of the content was stale and unorganized. We tackled the project head on and went through the full process of developing a great web presence: content planning, design, development, deployment and post-launch analytics. During website development, Intelemedia also approached me about a new platform they were planning and how we could introduce it to their clients. We decided a succinct booklet with an overview of the platform would give a unique way to show clients that this was no ordinary package.",
+      "type": "Website, Brochure, Presentation",
+      "images": [
+        "/images/portfolio/brochure-cover.jpg",
+        "/images/portfolio/brochure-closeup.jpg",
+        "/images/portfolio/brochure-open.jpg",
+        "/images/portfolio/presentation.jpg",
+        "/images/portfolio/renders2.jpg"
+      ]
+    },
+    {
+      "title": "Various Design Work",
+      "description": "Collection of design work including branding, stationary, marketing materials, and web design.",
+      "type": "Design",
+      "images": [
+        "/images/portfolio/brown-stationary.jpg",
+        "/images/portfolio/yellow-stationary.jpg",
+        "/images/portfolio/avena-bakery.jpg",
+        "/images/portfolio/branding.jpg",
+        "/images/portfolio/logos.jpg",
+        "/images/portfolio/festival.jpg",
+        "/images/portfolio/discover-waco.jpg"
+      ]
+    }
+  ]
+} 

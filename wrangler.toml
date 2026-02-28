@@ -1,0 +1,4 @@
+name = "joshmatz-com"
+main = "@tanstack/react-start/server-entry"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]

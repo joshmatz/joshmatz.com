@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "title": "Sea Shell Stipple by the Sea Shore",
+      "date": "December 5, 2012",
+      "category": "Myself",
+      "tags": ["art", "drawing"],
+      "content": "Prior to taking my first drawing class at Baylor — other than seeing the art work my brother had created in high school — I had no experience with drawing. The materials had me dumbfounded and I always thought that charcoal was just something you grill with. Out of all the drawings during this class, this was the final project and the first I felt good about.",
+      "image": "/images/blog/sea-shell-stipple-josh-matz.jpg"
+    },
+    {
+      "title": "A flexible, customizable viewport resizer for testing responsive designs.",
+      "date": "2012",
+      "category": "Tools",
+      "tags": ["responsive"],
+      "content": "Link to a viewport resizer tool",
+      "url": "http://lab.maltewassermann.com/viewport-resizer/"
+    },
+    {
+      "title": "Ryan Henson Creighton on interactive design",
+      "date": "2012",
+      "category": "Quotes",
+      "tags": ["interactive-design"],
+      "content": "We shouldn't mistake participation in the interactive world with mastery over it."
+    },
+    {
+      "title": "Oxide Interactive's website makes excellent use of CSS transforms",
+      "date": "2012",
+      "category": "Inspiration",
+      "content": "Visit their website at www.oxideinteractive.com.au",
+      "image": "/images/blog/oxideinteractive.png"
+    },
+    {
+      "title": "Remote debugging on mobile devices",
+      "date": "November 16, 2012",
+      "category": "Tools",
+      "tags": ["chrome", "debugging", "safari"],
+      "content": "With the growing presence of mobile devices on the world wide web, it's becoming ever more necessary to properly test and debug our websites on these new devices. Fortunately for us, the Chrome team and Apple are working to make it easier and easier."
+    },
+    {
+      "title": "It's finally here!",
+      "date": "December 2012",
+      "category": "Myself",
+      "tags": ["graduation", "announcement"],
+      "content": "You are hereby invited to attend the graduation of Sir Joshua William Matz from Baylor University (Use of 'Sir' not a requirement for attendance.)\n\nIt's finally here! After 13 grueling semesters of strenuous, caffeine-filled nights and after conquering a formidable array of professors, Sir Josh is proud to be receiving a Bachelors of Fine Arts in Graphic Design from Baylor University.\n\nTo ring in the New Year, I'll promptly be moving to Austin, Texas to join the 40-hour work week crowd with Springbox, an interactive creative agency that I have been working with since September."
+    }
+  ]
+} 

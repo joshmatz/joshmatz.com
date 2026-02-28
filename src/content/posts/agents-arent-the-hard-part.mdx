@@ -1,0 +1,69 @@
+---
+date: "2026-02-27"
+title: "Agents aren't the hard part"
+description: "Everyone's shipping agent tools, but the real challenge isn't building agents — it's making your organization legible enough for them to work."
+---
+
+The past few weeks, a bunch of companies shipped agent-building tools at roughly the same time. [Notion released custom agents](https://www.notion.com/blog/introducing-custom-agents). [OpenAI announced Frontier](https://openai.com/index/introducing-openai-frontier/). [Airtable launched HyperAgent](https://hyperagent.com). And it all has me thinking about what it actually means to work with AI agents inside a company — not as an individual, but as a team.
+
+## The four levels of AI at work
+
+[Hurley at Notion tweeted a framework](https://x.com/Johnsjawn/status/2027077360848408720) that got me thinking. They described four levels of AI adoption: thought partner, assistant, teammates, and system. Here's how I think about them:
+
+<div data-component="AITransformationLevels"></div>
+
+**Level 1: Thought partner.** This is what happened when ChatGPT launched. It was fun to talk to, useful for brainstorming or refining how you write, but it couldn't _do_ anything. No automation, no actions — just a conversation.
+
+**Level 2: Assistant.** The AI can now do research, check your Gmail, look things up in Notion. In engineering, this is where the first versions of Cursor and Claude Code live. You're writing code and the AI is helping, but you're the one driving. You and the agent, one-on-one, doing the thing together.
+
+**Level 3: Teammate.** AI starts automating the repetitive work that teams deal with every day. Nobody is prompting it. It's reacting to events and running on schedules. Categorizing incoming product requests, finding duplicates, relating them to existing issues. Or even something as simple as auto-merging Dependabot PRs when tests pass — something nobody on the team is doing by hand today anyway.
+
+**Level 4: Embedded operator.** AI gets inserted into larger, more critical workflows. It's [resolving 90% of support requests](https://x.com/rauchg/status/2026844368246861858). It's triaging and fixing minor bugs without a human in the loop. This is where headcount conversations start happening, whether we like it or not. Not because the AI replaced someone's job description, but because the job as it existed was mostly process execution. And process execution is exactly what agents are good at.
+
+These levels aren't universal across a company. They shift depending on the team, the department, the person. Support orgs, for example, are already closer to level 4. They're used to applying playbooks and running structured processes. The more you can turn a process into an algorithm, the more you can automate it. Engineering is getting there too. Tools like [CodeRabbit](https://coderabbit.ai) reviewing PRs, [Devin](https://devin.ai) working tickets autonomously, [Cursor Demos](https://cursor.com/blog/agent-computer-use) spinning up cloud VMs to write code and record demos of what they built. That's all level 3 stuff.
+
+As Hurley points out, even just having a shared vocabulary for this is useful. If your support team can say "we're operating at level 3, trying to get to 4" and your product team can say "we're still at level 2," that's already more alignment than most companies have. You don't need to solve the whole thing at once. You need to know where everyone actually is.
+
+## Most orgs aren't ready, and it's not because of AI
+
+Most teams can't jump to level 4. Not because the agents aren't smart enough, but because the organizations themselves aren't legible enough for agents to operate in.
+
+Their processes are messy, or even undefined. People just kind of do what they think needs to happen to make progress. And even where processes do exist, so much of the actual work happens in people's heads. When you look at a bug report, you're not just reading the ticket. You're thinking about how many similar reports you've seen this week, whether the logs show it happening frequently, whether someone asked about something like this a month ago. You're pulling from previous requests, related Intercom tickets, conversations you've had, the general vibe of what the team is prioritizing. None of that is written down anywhere.
+
+For an agent to make the same kinds of calls, all of that context needs to be explicit — structured, connected, queryable. And when agents make a different call than you would have, 98% of the time it's not because they got it wrong. It's because you didn't give them enough context to get it right.
+
+Which means you need a way to actually see it. Not just what an agent is doing, but how it gets its data, what it's connected to, and where it fits in the larger process. When I build a Zapier automation today, I can look at it and know exactly what happens at each step. But the agent running a Cursor demo is not the same agent triaging a support request is not the same agent brainstorming product solutions. When you start wiring processes together, let alone agents, you lose that transparency fast. [Zapier seems to be ahead of the game here](https://zapier.com/blog/zapier-agents-pods-dashboards/). They're moving toward single-purpose agents, each focused on one business function, with orchestration across them. Probably because they've been thinking about deterministic workflows longer than anyone. But you can't just look at one agent's prompt and understand what the system is doing. You need to see how they connect, what's handing off to what, and where decisions are being made.
+
+This is the same problem anyone who's built complex workflows in HubSpot or Salesforce has hit. The more you layer on, the harder it is to know what's happening and why. Individual agents aren't the problem. The system of agents is. There needs to be a visibility layer across the whole org, not just inside individual tools.
+
+<div data-component="BugFlowVisualization"></div>
+
+## Making your org agent-ready
+
+None of this is strictly necessary to get started. You can wire up an agent tomorrow. But it helps to know what's possible before you dive in. Even just seeing the full shape of where agents can go changes how you think about where to start. And the people building agents aren't the only ones affected by them. The whole org is. Once you're past a handful of automations, you need actual structure underneath. Which, honestly, is the same work you'd do to make a well-run organization with or without AI:
+
+**Articulate the process.** Write it down. Figure out what people are actually doing — not the org chart version, the real version. Are they getting information from Slack? Is it a ticket from Intercom? An error trace in Datadog? Is there decision-making involved, or is it just a rote copy-paste from one system into another? You need to be able to show the actual steps people take to do their job. This sounds easy. It's not. You'll find that three people on the same team describe the same process three different ways, and all of them are leaving out steps they don't even realize they take.
+
+**Automate the straightforward parts.** Shipping data from one system to another, summarizing product requests into a database, cataloging things, formatting data. Let AI handle the stuff that doesn't require judgment. Start there.
+
+**Map out what goes into decisions.** What are the judgment calls in your process? What data feeds them? What knowledge do people carry in their heads that never gets written down? You have to make that context explicit, structured, and queryable, because that's the only way an agent can access it. That means modeling not just the incoming data, but the _knowledge_ you use to make decisions and the processes you follow to apply it. This is the step most people skip, and it's where things start to break down. The agent can make the call. It just doesn't have the context you do.
+
+**Then automate the hard parts.** Once you've mapped the context and the process is clear, you can start letting agents make the judgment calls. Is this actually a bug? How much effort is it worth? What does "good enough" look like for this particular fix? Some decisions need that kind of nuance, some don't. That's the last step, and it only works if everything upstream is solid.
+
+## Where this is going
+
+A lot of people right now are building agents from the bottom up and working with them at level 2 or 3. One agent at a time, hand-tuning prompts, wiring up tools, testing edge cases. There's nothing wrong with that. You learn a lot by getting your hands dirty with a single agent. But it's not a holistic approach to making an agent-driven organization. You end up lopsided — one department with a slick automation, another still doing everything by hand, and no shared understanding of how the pieces connect.
+
+What needs to happen is a structured approach across the organization. Looking at the processes, the decision points, the flows. And generating agents from _those_. It's a software development problem:
+
+1. **Plan it.** Map out the workflow. Where are the decision points? What does each function need to do?
+2. **Build it.** Configure agents for each node in that graph.
+3. **Test it.** If a customer reports a bug, will it flow through support to engineering to production the way you expect?
+4. **Review it.** Give humans a way to look at the whole thing and adjust.
+5. **Deploy it.** Connect it to the real systems and let it run.
+
+That's the same cycle we use for shipping software. It shouldn't be different for shipping agents.
+
+The irony is that the hardest part of becoming an agent-driven org has nothing to do with agents. It's the organizational clarity you need before agents can work at all. Most companies that go through this exercise will realize the biggest win isn't the automation — it's that they finally wrote down how their business actually operates. The agents are just a forcing function for organizational hygiene that was overdue anyway.
+
+This is what the next 2–3 years look like. It's not the endgame. The tools and the agents will keep collapsing roles and steps that feel necessary right now. But you can't skip this phase. You have to make the implicit explicit before anything can run on it.
