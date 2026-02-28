@@ -8,6 +8,7 @@ import {
   Link,
 } from '@tanstack/react-router'
 import appCss from '~/styles.css?url'
+import { ThemeToggle } from '~/components/ThemeToggle'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -55,6 +56,11 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme')||'system';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','system')}})()`,
+          }}
+        />
         <HeadContent />
       </head>
       <body className="min-h-screen bg-[var(--color-warm-50)] text-[var(--color-warm-900)] font-serif antialiased">
@@ -66,7 +72,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
             >
               Josh Matz
             </Link>
-            <nav className="flex gap-8 text-[0.95rem]">
+            <nav className="flex items-center gap-8 text-[0.95rem]">
               <Link
                 to="/"
                 className="text-[var(--color-warm-500)] hover:text-[var(--color-warm-900)] transition-colors duration-200 [&.active]:text-[var(--color-warm-900)]"
@@ -79,6 +85,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
               >
                 Writing
               </Link>
+              <ThemeToggle />
             </nav>
           </header>
           <main>{children}</main>

@@ -105,3 +105,35 @@ body {
   background: var(--color-warm-200);
   color: var(--color-warm-900);
 }
+
+/* Dark mode: explicit */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-warm-50: #1c1a16;
+  --color-warm-100: #26231d;
+  --color-warm-200: #36322a;
+  --color-warm-300: #4a4439;
+  --color-warm-400: #7d7568;
+  --color-warm-500: #a09686;
+  --color-warm-600: #beb5a6;
+  --color-warm-700: #d4cdc2;
+  --color-warm-800: #e6e0d6;
+  --color-warm-900: #f2efe9;
+}
+
+/* Dark mode: system preference */
+@media (prefers-color-scheme: dark) {
+  [data-theme="system"] {
+    color-scheme: dark;
+    --color-warm-50: #1c1a16;
+    --color-warm-100: #26231d;
+    --color-warm-200: #36322a;
+    --color-warm-300: #4a4439;
+    --color-warm-400: #7d7568;
+    --color-warm-500: #a09686;
+    --color-warm-600: #beb5a6;
+    --color-warm-700: #d4cdc2;
+    --color-warm-800: #e6e0d6;
+    --color-warm-900: #f2efe9;
+  }
+}

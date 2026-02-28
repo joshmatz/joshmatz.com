@@ -18,7 +18,7 @@ Key traits:
 - **Casual but substantive.** Sentences like "People just kind of do what they think needs to happen to make progress" — plain language carrying a real insight.
 - **Self-deprecating, not self-serious.** Go-kart trophies, scare-quoted "freelancing," a cat he refuses to claim. Never puffs himself up.
 - **Says the uncomfortable thing plainly.** "This is where headcount conversations start happening, whether we like it or not." No hedging, no corporate softening.
-- **Short paragraphs, em dashes, italics for emphasis.** Reads fast. Not academic.
+- **Short paragraphs, italics for emphasis.** Reads fast. Not academic.
 - **Links to sources without over-explaining them.** Mention the thing, link it, move on. Don't restate the product's feature list.
 - **Uses real examples from his own work.** Not hypothetical "imagine if" scenarios — actual tools, actual companies, actual experiences.
 
@@ -27,6 +27,7 @@ What to avoid:
 - Conceited framing ("I write all the code that matters")
 - Over-explaining links or tools — just link and move on
 - Stiff time references for recent things ("that stuck with me" for something he read an hour ago)
+- Em dashes (—) anywhere on the site: in writing, metadata, descriptions, or UI copy. Use periods, commas, or restructure the sentence instead.
 - Emoji in writing
 
 ## Site structure
