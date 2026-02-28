@@ -32,7 +32,7 @@ export const Route = createRootRoute({
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
     links: [
-      { rel: 'icon', href: '/images/favicon.ico' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/images/favicon.svg' },
       { rel: 'stylesheet', href: appCss },
       {
         rel: 'stylesheet',
