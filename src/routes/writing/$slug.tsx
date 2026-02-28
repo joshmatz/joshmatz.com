@@ -82,7 +82,6 @@ export const Route = createFileRoute('/writing/$slug')({
     links: loaderData
       ? [
           {
-            key: 'canonical',
             rel: 'canonical',
             href: `https://joshmatz.com/writing/${loaderData.slug}`,
           },

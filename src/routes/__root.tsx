@@ -32,10 +32,9 @@ export const Route = createRootRoute({
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
     links: [
-      { key: 'favicon', rel: 'icon', href: '/images/favicon.ico' },
-      { key: 'app-css', rel: 'stylesheet', href: appCss },
+      { rel: 'icon', href: '/images/favicon.ico' },
+      { rel: 'stylesheet', href: appCss },
       {
-        key: 'google-fonts',
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap',
       },

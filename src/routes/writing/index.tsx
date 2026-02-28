@@ -32,7 +32,7 @@ export const Route = createFileRoute('/writing/')({
           'Posts about building software, side projects, startups, and working with AI agents.',
       },
     ],
-    links: [{ key: 'canonical', rel: 'canonical', href: 'https://joshmatz.com/writing' }],
+    links: [{ rel: 'canonical', href: 'https://joshmatz.com/writing' }],
   }),
 })
 

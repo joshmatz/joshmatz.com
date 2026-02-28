@@ -44,7 +44,7 @@ export const Route = createFileRoute('/')({
         content: 'https://joshmatz.com/og/site?v=home',
       },
     ],
-    links: [{ key: 'canonical', rel: 'canonical', href: 'https://joshmatz.com/' }],
+    links: [{ rel: 'canonical', href: 'https://joshmatz.com/' }],
     scripts: [
       {
         type: 'application/ld+json',
