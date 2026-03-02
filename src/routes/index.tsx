@@ -119,6 +119,8 @@ function Home() {
                 <li><StatusDot status="online" />BoppoStories {' '}<RefLink href="https://boppostories.com" number={1} tooltip="AI-powered personalized kids' stories" /></li>
                 <li><StatusDot status="online" />Zomory {' '}<RefLink href="https://zomory.com/" number={1} tooltip="AI-powered Notion search from Slack" /> <RefLink href="https://www.producthunt.com/products/zomory" number={2} tooltip="Product Hunt" /></li>
                 <li><StatusDot status="online" />Lemon Drop {' '}<RefLink href="https://www.lemondrop.app/" number={1} tooltip="macOS menu bar app — cash register sound when you get paid on Lemon Squeezy" /> <RefLink href="https://www.producthunt.com/products/lemon-drop" number={2} tooltip="Product Hunt" /></li>
+                <li><StatusDot status="online" />HomeCostPro {' '}<RefLink href="https://www.homecostpro.com/" number={1} tooltip="Home affordability calculators, SEO experiment" /></li>
+                <li><StatusDot status="online" />RotaryBot {' '}<RefLink href="https://www.rotarybot.com/" number={1} tooltip="AI phone receptionist for small businesses" /></li>
                 <li><StatusDot status="online" />joshmatz.com {' '}<RefLink href="https://github.com/joshmatz/joshmatz.com" number={1} tooltip="GitHub" /> <RefLink href="https://web.archive.org/web/20251215143600/https://joshmatz.com/" number={2} tooltip="v3 — design portfolio" /> <RefLink href="https://dribbble.com/shots/2108944-Josh-Matz-Branding" number={3} tooltip="Dribbble — branding history" /></li>
                 <li><StatusDot status="offline" />ShiftPlane {' '}<RefLink href="https://www.producthunt.com/products/shiftplane" number={1} tooltip="Community platform — like Reddit + Substack + Patreon" /></li>
                 <li><StatusDot status="offline" />CryptoWars {' '}<RefLink href="https://github.com/joshmatz/cryptowars" number={1} tooltip="Mafia Wars on-chain — hit EVM limits, great exploration" /></li>
@@ -127,7 +129,11 @@ function Home() {
                 <li><StatusDot status="online" />MEA Timeline {' '}<RefLink href="http://jmhosting.space/mea_timeline/" number={1} tooltip="College project — went a little overboard" /></li>
                 <li><StatusDot status="unshipped" tooltip="Wedding budgeting app" />Duet {' '}<RefLink href="https://dribbble.com/shots/2690102-Duet-Home-Page" number={1} tooltip="Dribbble — wedding budgeting app" /></li>
                 <li><StatusDot status="unshipped" tooltip="SMB budgeting" />PulseHQ</li>
-                <li><StatusDot status="unshipped" tooltip="AI app builder, like Bolt meets Base44. Client-only ESM Next.js compilation before Vercel open-sourced their sandbox tooling." />Primiro</li>
+                <li><StatusDot status="unshipped" tooltip="AI app builder, like Bolt meets Base44" />Primiro</li>
+                <li><StatusDot status="unshipped" tooltip="Visual Tailwind editor, like Framer but for Tailwind" />Tailwind GUI</li>
+                <li><StatusDot status="unshipped" tooltip="Local-first transcription app, then Wisprflow launched" />Turbo Transcriptions</li>
+                <li><StatusDot status="unshipped" tooltip="IT asset tracking, especially laptops" />ZentaHQ</li>
+                <li><StatusDot status="unshipped" tooltip="Hosted agent runtime for AI SDK, conversations, memory, attachments" />Runva AI</li>
                 <li><StatusDot status="unshipped" tooltip="Personal insurance billing and EOB tracker" />Insurance EOB tracker</li>
 
                 {/* Places I worked — dashed underline indicates employment */}
