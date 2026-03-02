@@ -142,17 +142,17 @@ export function RefLabel({
   )
 }
 
-export function StatusDot({ status, tooltip }: { status: 'online' | 'offline' | 'dead', tooltip?: string }) {
+export function StatusDot({ status, tooltip }: { status: 'online' | 'offline' | 'dead' | 'unshipped', tooltip?: string }) {
   const { show, hide } = useContext(RefTooltipContext)
   const ref = useRef<HTMLSpanElement>(null)
-  const defaultLabels = { online: 'Online', offline: 'Offline', dead: 'Dead' }
+  const defaultLabels = { online: 'Online', offline: 'Offline', dead: 'Dead', unshipped: 'Unshipped' }
   const label = tooltip ?? defaultLabels[status]
 
   const handleEnter = () => {
     if (ref.current) show(label, ref.current)
   }
 
-  if (status === 'dead') {
+  if (status === 'dead' || status === 'unshipped') {
     return (
       <span
         ref={ref}
@@ -162,7 +162,7 @@ export function StatusDot({ status, tooltip }: { status: 'online' | 'offline' | 
         onFocus={handleEnter}
         onBlur={hide}
         tabIndex={0}
-      >&#x2715;</span>
+      >{status === 'dead' ? '\u2715' : '\u2013'}</span>
     )
   }
 
