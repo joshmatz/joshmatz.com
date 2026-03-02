@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { createServerFn } from '@tanstack/react-start'
 import { PostList } from '~/components/PostList'
-import { RefLabel, RefLink, RefTooltipProvider } from '~/components/RefLink'
+import { RefLabel, RefLink, RefTooltipProvider, StatusDot } from '~/components/RefLink'
 import { getAllPosts } from '~/lib/posts'
 
 const getRecentPosts = createServerFn({ method: 'GET' }).handler(() => {
@@ -107,33 +107,31 @@ function Home() {
           </div>
 
           <RefTooltipProvider>
-            <div className="grid grid-cols-2 gap-8 mt-12">
-              <div>
-                <h3 className="text-[1.5rem] font-semibold mb-4 text-[var(--color-warm-900)]">
-                  Current
-                </h3>
-                <ul className="space-y-1 text-[1.05rem] text-[var(--color-warm-600)]">
-                  <li><RefLabel tooltip="Co-Founder & CTO — remote" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">DocStation</RefLabel> {' '}<RefLink href="https://docstation.co" number={1} tooltip="docstation.co" /> <RefLink href="https://www.statesman.com/story/news/2018/01/23/startup-accelerators-techstars-and-sputnik-atx-introduce-new-austin-cohorts/10169996007/" number={2} tooltip="Techstars Demo Day" /></li>
-                  <li>Nitejar {' '}<RefLink href="https://nitejar.dev" number={1} tooltip="Self-hosted AI agent fleet" /> <RefLink href="https://github.com/nitejar/nitejar" number={2} tooltip="GitHub" /></li>
-                  <li>BoppoStories {' '}<RefLink href="https://boppostories.com" number={1} tooltip="AI-powered personalized kids' stories" /></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-[1.5rem] font-semibold mb-4 text-[var(--color-warm-900)]">
-                  Past
-                </h3>
-                <ul className="space-y-1 text-[1.05rem] text-[var(--color-warm-500)]">
-                  <li><RefLabel tooltip="Lead Engineer — remote" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">InVision</RefLabel> {' '}<RefLink href="https://www.wsj.com/articles/invision-rides-design-demands-to-1-billion-valuation-1509541200" number={1} tooltip="WSJ: $1B valuation" /> <RefLink href="https://www.fastcompany.com/91006037/invision-former-ux-trailblazer-ending-services-figma-adobe" number={2} tooltip="FastCompany: the end of InVision" /></li>
-                  <li><RefLabel tooltip="Front-End Engineer — remote" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">SRC:CLR (SourceClear)</RefLabel> {' '}<RefLink href="https://en.wikipedia.org/wiki/SourceClear" number={1} tooltip="Wikipedia — joined as first front-end dev" /> <RefLink href="https://web.archive.org/web/20140725122351/https://sourceclear.com/" number={2} tooltip="Marketing site — designed & developed" /> <RefLink href="https://web.archive.org/web/20140729111039/https://blog.sourceclear.com/" number={3} tooltip="Blog — designed & developed in <1 week, before AI" /></li>
-                  <li><RefLabel tooltip="UX Developer" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">Springbox</RefLabel> {' '}<RefLink href="https://www.linkedin.com/company/springbox/about" number={1} tooltip="LinkedIn — hired before graduating, started remote" /> <RefLink href="https://web.archive.org/web/20130805065926/http://springbox.com/" number={2} tooltip="Springbox.com — led design & dev on responsive redesign" /> <RefLink href="https://web.archive.org/web/20130801191326/http://www.sweetleaftea.com/" number={3} tooltip="Sweet Leaf Tea — lead front-end dev" /> <RefLink href="https://design.bybrettjohnson.com/king-pong/" number={4} tooltip="King Pong — led dev" /></li>
-                  <li><RefLabel tooltip="Contract — remote" className="underline decoration-dashed decoration-[var(--color-warm-200)] underline-offset-4">Intelemedia</RefLabel> {' '}<RefLink href="https://web.archive.org/web/20131012035816/http://www.intelemedia.com/" number={1} tooltip="Full WordPress redesign & dev" /></li>
-                  <li>Thardferr clone {' '}<RefLink href="https://github.com/joshmatz/cta" number={1} tooltip="Source code on GitHub" /></li>
-                  <li>DiscoverWaco {' '}<RefLink href="https://web.archive.org/web/20121013231502/http://discoverwaco.net/" number={1} tooltip="College project — went a lot overboard" /></li>
-                  <li>MEA Timeline {' '}<RefLink href="http://jmhosting.space/mea_timeline/" number={1} tooltip="College project — went a little overboard" /></li>
-                  <li>CryptoWars {' '}<RefLink href="https://github.com/joshmatz/cryptowars" number={1} tooltip="Mafia Wars on-chain — hit EVM limits, great exploration" /></li>
-                  <li>joshmatz.com {' '}<RefLink href="https://web.archive.org/web/20251215143600/https://joshmatz.com/" number={1} tooltip="v3 — design portfolio" /></li>
-                </ul>
-              </div>
+            <div className="mt-12">
+              <h3 className="text-[1.5rem] font-semibold mb-4 text-[var(--color-warm-900)]">
+                Projects
+              </h3>
+              <ul className="space-y-1 text-[1.05rem] text-[var(--color-warm-600)]">
+                {/* My projects — online first, then offline */}
+                <li><StatusDot status="online" /><RefLabel tooltip="Co-Founder & CTO — remote" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">DocStation</RefLabel> {' '}<RefLink href="https://docstation.co" number={1} tooltip="docstation.co" /> <RefLink href="https://www.statesman.com/story/news/2018/01/23/startup-accelerators-techstars-and-sputnik-atx-introduce-new-austin-cohorts/10169996007/" number={2} tooltip="Techstars Demo Day" /></li>
+                <li><StatusDot status="online" />Nitejar {' '}<RefLink href="https://nitejar.dev" number={1} tooltip="Self-hosted AI agent fleet" /> <RefLink href="https://github.com/nitejar/nitejar" number={2} tooltip="GitHub" /></li>
+                <li><StatusDot status="online" />Christmas Tree Review Hub {' '}<RefLink href="https://christmastreereviewhub.com" number={1} tooltip="Independent artificial Christmas tree catalog with real specs and reviews" /></li>
+                <li><StatusDot status="online" />BoppoStories {' '}<RefLink href="https://boppostories.com" number={1} tooltip="AI-powered personalized kids' stories" /></li>
+                <li><StatusDot status="online" />Zomory {' '}<RefLink href="https://zomory.com/" number={1} tooltip="AI-powered Notion search from Slack" /></li>
+                <li><StatusDot status="online" />Lemon Drop {' '}<RefLink href="https://www.lemondrop.app/" number={1} tooltip="macOS menu bar app — cash register sound when you get paid on Lemon Squeezy" /></li>
+                <li><StatusDot status="online" />joshmatz.com {' '}<RefLink href="https://github.com/joshmatz/joshmatz.com" number={1} tooltip="GitHub" /> <RefLink href="https://web.archive.org/web/20251215143600/https://joshmatz.com/" number={2} tooltip="v3 — design portfolio" /></li>
+                <li><StatusDot status="offline" />ShiftPlane {' '}<RefLink href="https://www.producthunt.com/products/shiftplane" number={1} tooltip="Community platform — like Reddit + Substack + Patreon" /></li>
+                <li><StatusDot status="offline" />CryptoWars {' '}<RefLink href="https://github.com/joshmatz/cryptowars" number={1} tooltip="Mafia Wars on-chain — hit EVM limits, great exploration" /></li>
+                <li><StatusDot status="offline" />Thardferr clone {' '}<RefLink href="https://github.com/joshmatz/cta" number={1} tooltip="Source code on GitHub" /></li>
+                <li><StatusDot status="offline" />DiscoverWaco {' '}<RefLink href="https://web.archive.org/web/20121013231502/http://discoverwaco.net/" number={1} tooltip="College project — went a lot overboard" /></li>
+                <li><StatusDot status="offline" />MEA Timeline {' '}<RefLink href="http://jmhosting.space/mea_timeline/" number={1} tooltip="College project — went a little overboard" /></li>
+
+                {/* Places I worked — dashed underline indicates employment */}
+                <li className="pt-4"><StatusDot status="dead" /><span className="line-through decoration-[var(--color-warm-300)]"><RefLabel tooltip="Lead Engineer — remote" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">InVision</RefLabel></span> {' '}<RefLink href="https://www.wsj.com/articles/invision-rides-design-demands-to-1-billion-valuation-1509541200" number={1} tooltip="WSJ: $1B valuation" /> <RefLink href="https://www.fastcompany.com/91006037/invision-former-ux-trailblazer-ending-services-figma-adobe" number={2} tooltip="FastCompany: the end of InVision" /></li>
+                <li><StatusDot status="offline" tooltip="Acquired" /><RefLabel tooltip="Front-End Engineer — remote" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">SRC:CLR (SourceClear)</RefLabel> {' '}<RefLink href="https://en.wikipedia.org/wiki/SourceClear" number={1} tooltip="Wikipedia — joined as first front-end dev" /> <RefLink href="https://web.archive.org/web/20140725122351/https://sourceclear.com/" number={2} tooltip="Marketing site — designed & developed" /> <RefLink href="https://web.archive.org/web/20140729111039/https://blog.sourceclear.com/" number={3} tooltip="Blog — designed & developed in <1 week, before AI" /></li>
+                <li><StatusDot status="offline" tooltip="Acquired" /><RefLabel tooltip="UX Developer" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">Springbox</RefLabel> {' '}<RefLink href="https://www.linkedin.com/company/springbox/about" number={1} tooltip="LinkedIn — hired before graduating, started remote" /> <RefLink href="https://web.archive.org/web/20130805065926/http://springbox.com/" number={2} tooltip="Springbox.com — led design & dev on responsive redesign" /> <RefLink href="https://web.archive.org/web/20130801191326/http://www.sweetleaftea.com/" number={3} tooltip="Sweet Leaf Tea — lead front-end dev" /> <RefLink href="https://design.bybrettjohnson.com/king-pong/" number={4} tooltip="King Pong — led dev" /></li>
+                <li><StatusDot status="online" /><RefLabel tooltip="Contract — remote" className="underline decoration-dashed decoration-[var(--color-warm-300)] underline-offset-4">Intelemedia</RefLabel> {' '}<RefLink href="https://web.archive.org/web/20131012035816/http://www.intelemedia.com/" number={1} tooltip="Full WordPress redesign & dev" /></li>
+              </ul>
             </div>
           </RefTooltipProvider>
         </div>

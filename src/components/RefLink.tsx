@@ -142,6 +142,47 @@ export function RefLabel({
   )
 }
 
+export function StatusDot({ status, tooltip }: { status: 'online' | 'offline' | 'dead', tooltip?: string }) {
+  const { show, hide } = useContext(RefTooltipContext)
+  const ref = useRef<HTMLSpanElement>(null)
+  const defaultLabels = { online: 'Online', offline: 'Offline', dead: 'Dead' }
+  const label = tooltip ?? defaultLabels[status]
+
+  const handleEnter = () => {
+    if (ref.current) show(label, ref.current)
+  }
+
+  if (status === 'dead') {
+    return (
+      <span
+        ref={ref}
+        className="inline-block w-2 h-2 mr-2 align-middle text-[var(--color-warm-400)] leading-none text-[0.6rem] font-bold cursor-default"
+        onMouseEnter={handleEnter}
+        onMouseLeave={hide}
+        onFocus={handleEnter}
+        onBlur={hide}
+        tabIndex={0}
+      >&#x2715;</span>
+    )
+  }
+
+  return (
+    <span
+      ref={ref}
+      className={`inline-block w-2 h-2 rounded-full mr-2 align-middle ${
+        status === 'online'
+          ? 'bg-[var(--color-warm-900)]'
+          : 'border border-[var(--color-warm-300)] bg-transparent'
+      }`}
+      onMouseEnter={handleEnter}
+      onMouseLeave={hide}
+      onFocus={handleEnter}
+      onBlur={hide}
+      tabIndex={0}
+    />
+  )
+}
+
 export function RefLink({
   href,
   number,
