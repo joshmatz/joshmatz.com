@@ -137,3 +137,9 @@ body {
     --color-warm-900: #f2efe9;
   }
 }
+
+/* Theme toggle icon visibility */
+.theme-icon { display: none; }
+[data-theme="system"] .theme-icon-system { display: inline; }
+[data-theme="light"] .theme-icon-light { display: inline; }
+[data-theme="dark"] .theme-icon-dark { display: inline; }

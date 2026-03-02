@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import { Copy, Check } from 'lucide-react'
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute, Link, notFound } from '@tanstack/react-router'
+import { NotFound } from '~/components/NotFound'
 import { createServerFn } from '@tanstack/react-start'
 import { getPost } from '~/lib/posts'
 import { componentRegistry } from '~/lib/mdx-components'
@@ -13,7 +14,14 @@ const fetchPost = createServerFn({ method: 'GET' })
 
 export const Route = createFileRoute('/writing/$slug')({
   component: PostPage,
-  loader: ({ params }) => fetchPost({ data: params.slug }),
+  notFoundComponent: NotFound,
+  loader: async ({ params }) => {
+    try {
+      return await fetchPost({ data: params.slug })
+    } catch {
+      throw notFound()
+    }
+  },
   head: ({ loaderData }) => ({
     meta: [
       {

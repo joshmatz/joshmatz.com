@@ -11,6 +11,8 @@ const postFiles = import.meta.glob('../content/posts/*.mdx', {
   eager: true,
 }) as Record<string, string>
 
+const isDev = import.meta.env.DEV
+
 export type PostMeta = {
   slug: string
   title: string
@@ -24,16 +26,20 @@ export type Post = PostMeta & {
 }
 
 export function getAllPosts(): PostMeta[] {
-  const posts = Object.entries(postFiles).map(([filepath, raw]) => {
-    const slug = filepath.split('/').pop()!.replace(/\.mdx$/, '')
-    const { data } = matter(raw)
-    return {
-      slug,
-      title: data.title as string,
-      date: data.date as string,
-      description: (data.description as string) || '',
-    }
-  })
+  const posts = Object.entries(postFiles)
+    .map(([filepath, raw]) => {
+      const slug = filepath.split('/').pop()!.replace(/\.mdx$/, '')
+      const { data } = matter(raw)
+      return {
+        slug,
+        title: data.title as string,
+        date: data.date as string,
+        description: (data.description as string) || '',
+        draft: data.draft === true,
+      }
+    })
+    .filter((post) => isDev || !post.draft)
+    .map(({ draft: _, ...post }) => post)
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   )
@@ -48,6 +54,9 @@ export async function getPost(slug: string): Promise<Post> {
   }
   const [, raw] = entry
   const { data, content } = matter(raw)
+  if (data.draft === true && !isDev) {
+    throw new Error(`Post not found: ${slug}`)
+  }
   const result = await unified()
     .use(remarkParse)
     .use(remarkGfm)
