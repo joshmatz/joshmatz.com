@@ -1,0 +1,130 @@
+---
+date: "2026-03-11"
+title: "Applied AI isn't magic"
+description: "In the last six months, agents have gone from interesting to hard to ignore. More of our product and engineering team is going to be working on AI features in the product, and I didn't want \"prompting\" to be the whole mental model."
+---
+
+In the last six months, agents have gone from interesting to hard to ignore.
+
+More of our product and engineering team is going to be working on AI features in the product, and I didn't want "prompting" to be the whole mental model.
+
+I was fully on the hype train back when the original Copilot came out and autocomplete suddenly got weirdly good. That was enough for me. But across a company, especially an engineering org, adoption doesn't happen just because a tool is cool. People need to see where it fits. They need to trust it. They need to understand what's actually happening when they use it.
+
+That was the point of the talk.
+
+Not "look at this sick demo." Not "everybody better become an agent engineer by Friday." Just getting us on the same page about the foundations while we also talk about the actual AI experiences we're using and building.
+
+Because applied AI isn't magic. It's software. A little weird in places, but still software.
+
+## Why I started with foundations
+
+If more of our development team is going to contribute to AI features, I don't want "prompting" to be the whole mental model.
+
+That's how you end up with a team that can kind of vibe its way through ChatGPT, but can't reason about why something is slow, why a response is expensive, why one model works and another fails, or why a feature looks good in a demo and falls apart in production.
+
+Every decision you make building with LLMs traces back to a handful of mechanics: tokens, context windows, model selection, prompt structure, tool calling, caching, and evals.
+
+Once you understand those, the whole thing gets less mystical pretty fast.
+
+<div data-component="TokensContextVisualization"></div>
+
+## Tokens, context, and the part everybody hand-waves
+
+The model doesn't read words. It reads tokens. That sounds like a boring implementation detail right up until you realize tokens are the unit of basically everything that matters.
+
+Cost is tokens in and tokens out. Latency is heavily affected by how many tokens you are sending and generating. Quality is shaped by how much useful information fits in the window and how much junk you forced in there because it felt safer to include everything.
+
+A lot of teams still think in terms of "just send the whole document" or "just give it the entire conversation" or "just throw the SOP in the system prompt." Sometimes that works. Sometimes that's exactly what you should do. But it isn't free.
+
+The architectural question isn't "can the model see all of this?" It's "what should the model see right now to do this job well?"
+
+That leads directly into model selection too. People love to talk about models like they're simple personality types. This one is fast. This one is smart. This one is cheap. Fine. Useful shortcut. But once you're building product, you need a more honest frame.
+
+You're choosing across capability dimensions. Reasoning depth. Tool use reliability. Vision. Code generation. Speed. Cost. A model that is great for summarizing a patient note is not automatically the right model for reading a fax, extracting structured data, and deciding when to ask for clarification.
+
+My advice there: start with the most capable model, get the feature working, get your eval passing, then see if a smaller model holds up. Otherwise you're guessing twice.
+
+[Anthropic has a good model selection guide too](https://docs.anthropic.com/en/docs/about-claude/models/choosing-a-model). It's a useful checklist for the obvious stuff: speed, cost, vision, reasoning, and tool use.
+
+[Browserbase wrote about this well in their Stagehand eval work](https://www.browserbase.com/blog/evaluating-browser-agents). Same broad task, same environment constraints, different models, very different results on accuracy, speed, and cost. Sometimes the model you expect to win doesn't.
+
+## The model is the brain. The harness is the product.
+
+This was the part I most wanted the team to internalize.
+
+When people say "AI feature," what they often mean is "we send text to a model and it sends text back." But the actual product is everything wrapped around that call.
+
+Memory. Prompt assembly. Tool permissions. State. Retry logic. Traces. Guardrails. Approval flows. Timeouts. Error handling.
+
+That's the harness.
+
+And once you start building agents, the single most important thing in the harness is the loop.
+
+<div data-component="AgentLoopVisualization"></div>
+
+The model never actually touches the internet. It never runs your code. It never opens your database. It asks *you* to do those things. Your application decides whether that request is valid, whether the tool should run, what comes back, and whether the loop continues.
+
+That's why tool calling isn't some magical capability the model suddenly grew. It's structured output plus orchestration. Still very useful. Still very cool. But a lot less mysterious when you look at it that way.
+
+This is also why, when an agent experience breaks, the model often isn't the first thing I blame. Usually the harness is underspecified, the tool shape is bad, the context is wrong, or the stopping conditions are sloppy.
+
+We already have some of this internally. We're building more of it. And the more of it we build, the more I want everyone thinking about the surrounding system, not just the prompt.
+
+## Prompts are architecture, not vibes
+
+A lot of people still treat prompts like a weird blend of creative writing and superstition.
+
+Sometimes that's deserved. Prompt iteration can absolutely feel cursed.
+
+But at the application level, prompts are architecture. They're assembled from parts. Placement matters. The stable stuff should stay stable. The dynamic stuff should be intentionally injected. The tool list is part of the prompt. The conversation history is part of the prompt. The formatting you choose is part of the prompt.
+
+And if you're not tracing what actually got sent to the model, you're debugging blind.
+
+That's another thing I wanted to normalize with the team. When something goes wrong, you should be able to inspect the full request, the tool calls, the tool results, the timings, and the token counts. This should feel a lot more like debugging software than guessing.
+
+Prompt caching is the other half of this that people don't think about enough.
+
+<div data-component="PromptCachingVisualization"></div>
+
+This is one of the cleaner examples of why foundational understanding matters. If you keep changing the system prompt, swapping tools around, or switching models mid-conversation, you blow the cache and pay for it again. Same quality. Worse economics. Worse latency. No upside.
+
+So yes, prompt wording matters. But prompt layout matters too. Stability matters. Versioning matters. Knowing what changed matters.
+
+## When evals start to matter
+
+I also spent a decent amount of time on evals, but not because everybody needs some big formal eval setup on day one.
+
+If you're working by yourself, you can absolutely get pretty far just trying things, tweaking them, and seeing what feels better. That's fine. That's how a lot of this starts.
+
+The point where it stops being fine is when more than one person is touching the thing. Or when you want to compare prompts. Or models. Or tool shapes. At that point you need some shared way to say "this response is better than that one" and some shared scenarios to test against.
+
+That can start very small. A little golden dataset. A few happy paths, a few ambiguous cases, a couple weird edge cases. A file next to the prompt. Nothing fancy.
+
+If a user gives bad feedback in production, that should probably turn into another scenario in the dataset instead of disappearing into Slack.
+
+[Anthropic's guide to agent evals](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) makes this point well. You can start simple. You probably should. The value isn't in having a giant eval framework. It's in having something shared and repeatable once other people start contributing.
+
+And in healthcare-adjacent software, or really anything touching sensitive data, red teaming needs to be split into two buckets:
+
+- model-level behavior, like refusal and prompt injection resistance
+- harness-level enforcement, like auth, scoping, permissions, and tool boundaries
+
+The model can be tricked. Your tools shouldn't be.
+
+## What I wanted the team to leave with
+
+Mostly comfort.
+
+Not false comfort, like "AI is easy now." It isn't. The stack is moving fast, the vendor landscape keeps changing, and the failure modes are not always obvious.
+
+I wanted the kind of comfort that comes from demystification.
+
+We're at the point where more people on the team need to be able to contribute here. Not just consume AI tools. Not just try them. Actually build with them.
+
+I don't think the best way to get people there is to start with the flashiest demo.
+
+You start by showing the mechanics. Explain the weird parts plainly. Admit where it's fuzzy. Make room for questions. Connect it back to software engineering instincts people already have.
+
+That's what I was trying to do with this talk.
+
+That's usually when they start building.

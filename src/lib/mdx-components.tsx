@@ -6,6 +6,9 @@ import {
   ClaudeProjectContext,
   ClaudeUsageDepthChart,
 } from '~/components/claude-team-tour/ClaudeTeamTourVisuals'
+import { AgentLoopVisualization } from '~/components/applied-ai-isnt-magic/AgentLoopVisualization'
+import { PromptCachingVisualization } from '~/components/applied-ai-isnt-magic/PromptCachingVisualization'
+import { TokensContextVisualization } from '~/components/applied-ai-isnt-magic/TokensContextVisualization'
 
 export const componentRegistry: Record<string, React.ComponentType> = {
   AITransformationLevels,
@@ -14,4 +17,7 @@ export const componentRegistry: Record<string, React.ComponentType> = {
   ClaudeMaturityModel,
   ClaudeProjectContext,
   ClaudeUsageDepthChart,
+  TokensContextVisualization,
+  AgentLoopVisualization,
+  PromptCachingVisualization,
 }
