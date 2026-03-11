@@ -12,7 +12,7 @@ Also building [Nitejar](https://nitejar.dev) — an agent platform for teams.
 
 Josh's writing is **conversational, honest, and a little funny** without trying too hard. Think "smart friend explaining something at a bar," not "thought leader on LinkedIn."
 
-**Reference post:** `src/content/posts/agents-need-org-charts-not-prompts.mdx` — this is the gold standard for tone.
+**Reference post:** `src/content/posts/agents-arent-the-hard-part.mdx` — this is the gold standard for tone.
 
 Key traits:
 - **Casual but substantive.** Sentences like "People just kind of do what they think needs to happen to make progress" — plain language carrying a real insight.

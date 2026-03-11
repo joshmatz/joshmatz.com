@@ -1,0 +1,117 @@
+---
+date: "2026-03-11"
+title: "I gave our team the full Claude tour"
+description: "We had already rolled out Claude across the team. I wanted everyone to see what it can actually do now, where AI is today, and how far they could take it if they wanted."
+---
+
+This past week I walked the whole company through Claude.
+
+In hindsight, this is probably the walkthrough we should've started with.
+
+We had already given everyone access to Claude and sort of expected people to figure it out. Some people did. Some people were using it a lot. Some people were using it for cleanup work. Rewrite this email. Summarize these notes. Answer a quick question. All useful. Also very much the surface.
+
+I wanted to make sure everyone was caught up with where Claude and AI were *today*. Not six months ago. Not whatever version of ChatGPT first got lodged in their head. The current version. What it can do, where it is actually useful, where it still falls short, and how far they could take it if they wanted.
+
+And I wanted to do it live so people could ask questions and see it in practice instead of getting one more internal doc nobody reads.
+
+<div data-component="ClaudeUsageDepthChart"></div>
+
+## Almost everyone is using AI. The question is how deeply.
+
+That was basically the thesis of the whole thing.
+
+Not adoption of AI itself. Adoption of *depth of usage*.
+
+That distinction matters because a company can say "we rolled out Claude to everyone" and still have most people using it like a nicer Google search box.
+
+Which is fine, for the record. A lot of the simple stuff is genuinely useful. Rewriting something. Thinking through a decision. Summarizing your day. Cleaning up messy notes. That's real value.
+
+But the interesting part is what happens when it gets wired into how you work.
+
+Reading files. Working on long documents. Searching the web in real time. Pulling in context from connected tools. Holding onto persistent context inside a project. At that point it stops feeling like a chatbot and starts feeling more like an environment.
+
+That's what I wanted people to see.
+
+## Not everyone's in the same place
+
+One thing I talked through is that different teams are in different places. Sometimes different people on the same team are.
+
+I wrote more about this in [Agents aren't the hard part](/writing/agents-arent-the-hard-part). The short version is:
+
+<div data-component="ClaudeMaturityModel"></div>
+
+Level 1 is thought partner. Level 2 is assistant. Level 3 is teammate. Level 4 is embedded operator.
+
+These levels are not evenly distributed across a company.
+
+Some functions are already pushing into level 3 and 4. Support is the obvious one. The more a process looks like an algorithm, the more you can automate it. Engineering is somewhere behind that. Individual productivity is already transformed. Team-level automation is catching up.
+
+That framing was useful because it gives people a way to place themselves without the whole "am I good at AI" thing. More like: where am I, actually?
+
+## The practical stuff matters more than people think
+
+I wanted this to stay practical.
+
+So we started with the basics. Models. When to use which one. Extended thinking. Prompting. Reading files. Artifacts. Web search. Deep research. Connectors. Projects.
+
+None of that is especially glamorous. It's also the stuff people actually need.
+
+The prompting section was basically this: talk to it like a new coworker who's smart but has no context about your job.
+
+Context, then task, then constraints.
+
+If you're getting bad results, the answer is usually not that you found the wrong magic phrasing. Sometimes you need to give it more context. Sometimes the model is seeing the situation differently, and you need to interrogate the reasoning instead of just dumping in more context. Sometimes it's right because it sees something you haven't yet.
+
+That's a big part of why I wanted to do this with examples instead of abstract advice. People don't need another person telling them to "learn prompt engineering." They need to see the thing, use the thing, and get a feel for what kinds of inputs produce good outputs.
+
+The simple stuff is underrated.
+
+Dragging files into chat. Uploading a PDF and asking questions. Dropping in a spreadsheet. Taking a screenshot, drawing an arrow, and sending *that* instead of typing a whole paragraph about what you mean. People should do more of that.
+
+## Artifacts are one of the best features
+
+This was one of the things I wanted people to see because it changes how you use the tool.
+
+<div data-component="ClaudeArtifactsDiff"></div>
+
+If Claude creates something substantial, it shows up as an artifact. Then you can iterate on it without regenerating the whole thing.
+
+That's a much better model for long documents, drafts, specs, or really anything you're shaping over time. Say "change the deadline to 24 hours" and it updates that line. On a long document, that matters.
+
+Same thing with web search, deep research, and connectors. Once people see those in action, Claude stops feeling like a chat box where you throw prompts over the wall. It starts feeling more like a workspace.
+
+The caveat, obviously, is that some of this is still early. Some connectors are better than others. Some are more read-heavy than action-heavy. That's fine. You can say that plainly without pretending none of it is useful.
+
+## Projects are where it all starts to click
+
+<div data-component="ClaudeProjectContext"></div>
+
+Projects tie all of this together. Files, instructions, conversations, connectors, all centered around one part of your work.
+
+Every new chat in the project starts with that context baked in. No re-explaining yourself each time.
+
+That matters more than people realize. A lot of frustration with AI is really frustration with having to restate the same context over and over again.
+
+Projects also make the limitations clearer. They are walled off. Claude can only see conversations and files inside the current project, which is great for keeping things organized. It also means it cannot find something from a different project or a global chat. That's not a bug, really. It's part of the bigger lesson. When you're doing work, think about where that work lives and whether AI can connect to it.
+
+## I kept the rules short
+
+This part of the talk was intentionally short. Mostly common sense stuff. Know your company's rules about sensitive data. Review anything that's going to a customer or getting published somewhere. Experiment, but use judgment.
+
+It's a tool. Not magic. It's wrong sometimes. That's fine.
+
+## Why I wanted to do it live
+
+Could all of this have been a doc? Sure. In fact now it is.
+
+But doing it live mattered.
+
+People could ask questions when something felt fuzzy. They could see the tools in practice instead of hearing a feature list. They could watch the rough edges, not just the polished version. And, honestly, they could see that I didn't have all the answers either. We're all learning about this shiny new thing together. I've just been doing it a little longer.
+
+That was the whole point.
+
+Not mandatory adoption. Not some weird internal AI leaderboard. Just a shared sense of: okay, I see where this is now.
+
+Give people the tools, yes. But also give them the walkthrough. Show them what is possible, where the edges are, and what good usage actually looks like in practice.
+
+Then let them go farther if they want.
