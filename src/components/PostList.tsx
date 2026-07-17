@@ -1,13 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import type { PostMeta } from '~/lib/posts'
-
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
-}
+import { formatDate } from '~/lib/formatDate'
 
 export function PostList({ posts }: { posts: PostMeta[] }) {
   return (

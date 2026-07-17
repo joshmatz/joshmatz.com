@@ -4,6 +4,7 @@ import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { NotFound } from '~/components/NotFound'
 import { createServerFn } from '@tanstack/react-start'
 import { getPost } from '~/lib/posts'
+import { formatDate } from '~/lib/formatDate'
 import { componentRegistry } from '~/lib/mdx-components'
 
 const fetchPost = createServerFn({ method: 'GET' })
@@ -140,14 +141,6 @@ function PostPage() {
       }
     }
   }, [post.slug])
-
-  function formatDate(dateStr: string) {
-    return new Date(dateStr).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    })
-  }
 
   function renderContent(html: string) {
     if (!html.includes('data-component="')) {

@@ -1,4 +1,5 @@
 import { ImageResponse, loadGoogleFont } from 'workers-og'
+import { formatDate } from './formatDate'
 
 async function loadFonts() {
   const [loraRegular, loraSemibold] = await Promise.all([
@@ -18,11 +19,7 @@ async function loadFonts() {
 export async function generatePostOgImage(title: string, date: string) {
   const fonts = await loadFonts()
 
-  const formattedDate = new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+  const formattedDate = formatDate(date)
 
   return new ImageResponse(
     (
