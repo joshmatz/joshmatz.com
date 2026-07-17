@@ -88,7 +88,7 @@ function Home() {
           </h1>
           <div className="prose text-[1.25rem] sm:text-[1.375rem] leading-relaxed">
             <p>
-              I've been making things for the internet since 2009 — first as a
+              I've been making things for the internet since 2007 — first as a
               designer, then as a developer, now as both at once. I co-founded{' '}
               <a href="https://docstation.co">DocStation</a>, where my title
               says Co-Founder & CTO but my actual job is whatever needs
