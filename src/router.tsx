@@ -7,10 +7,27 @@ export function getRouter() {
     scrollRestoration: true,
   })
 
-  // Ensure the server emits TanStack's inline restoration script so the
-  // saved position is applied while the document is still being parsed.
-  if (typeof window === 'undefined') {
-    router.isScrollRestoring = true
+  if (typeof window !== 'undefined') {
+    // Hard refreshes restore before paint when the browser owns the first
+    // frame. Hand scroll restoration back to TanStack for SPA navigation.
+    const useNativeScrollRestoration = () => {
+      window.history.scrollRestoration = 'auto'
+    }
+    const useRouterScrollRestoration = () => {
+      window.requestAnimationFrame(() => {
+        window.history.scrollRestoration = 'manual'
+      })
+    }
+
+    useNativeScrollRestoration()
+    router.resetNextScroll = false
+
+    window.addEventListener('pageshow', useRouterScrollRestoration)
+    window.addEventListener('pagehide', useNativeScrollRestoration)
+
+    if (document.readyState === 'complete') {
+      useRouterScrollRestoration()
+    }
   }
 
   return router
