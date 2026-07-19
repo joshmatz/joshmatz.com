@@ -66,7 +66,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `if('scrollRestoration'in history)history.scrollRestoration='manual'`,
+            __html: `(function(){try{if('scrollRestoration'in history)history.scrollRestoration='manual';var s=JSON.parse(sessionStorage.getItem('tsr-scroll-restoration-v1_3')||'{}');var k=history.state&&history.state.__TSR_key;var p=k&&s[k]&&s[k].window;if(p&&(p.scrollX||p.scrollY))document.documentElement.setAttribute('data-scroll-restoring','')}catch(e){}})()`,
           }}
         />
         <script
@@ -102,6 +102,11 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
             </nav>
           </header>
           <main>{children}</main>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `document.documentElement.removeAttribute('data-scroll-restoring')`,
+            }}
+          />
           <footer className="mt-32 pt-10 border-t border-[var(--color-warm-200)] text-[0.875rem] text-[var(--color-warm-400)]">
             <div className="flex gap-6">
               <a

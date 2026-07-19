@@ -19,6 +19,14 @@ body {
   font-family: var(--font-serif);
 }
 
+html {
+  background: var(--color-warm-50);
+}
+
+html[data-scroll-restoring] body {
+  visibility: hidden;
+}
+
 /* Prose overrides for blog content */
 .prose {
   --tw-prose-body: var(--color-warm-800);
