@@ -7,6 +7,12 @@ export function getRouter() {
     scrollRestoration: true,
   })
 
+  // Ensure the server emits TanStack's inline restoration script so the
+  // saved position is applied while the document is still being parsed.
+  if (typeof window === 'undefined') {
+    router.isScrollRestoring = true
+  }
+
   return router
 }
 

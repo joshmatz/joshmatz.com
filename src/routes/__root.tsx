@@ -66,6 +66,11 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <script
           dangerouslySetInnerHTML={{
+            __html: `if('scrollRestoration'in history)history.scrollRestoration='manual'`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme')||'system';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','system')}})()`,
           }}
         />
