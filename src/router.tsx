@@ -8,10 +8,26 @@ export function getRouter() {
   })
 
   if (typeof window !== 'undefined') {
-    // The document restores hard refreshes after its blocking styles have
-    // loaded. TanStack owns scroll restoration after hydration.
-    window.history.scrollRestoration = 'manual'
+    // Hard refreshes restore before paint when the browser owns the first
+    // frame. Hand scroll restoration back to TanStack for SPA navigation.
+    const useNativeScrollRestoration = () => {
+      window.history.scrollRestoration = 'auto'
+    }
+    const useRouterScrollRestoration = () => {
+      window.requestAnimationFrame(() => {
+        window.history.scrollRestoration = 'manual'
+      })
+    }
+
+    useNativeScrollRestoration()
     router.resetNextScroll = false
+
+    window.addEventListener('pageshow', useRouterScrollRestoration)
+    window.addEventListener('pagehide', useNativeScrollRestoration)
+
+    if (document.readyState === 'complete') {
+      useRouterScrollRestoration()
+    }
   }
 
   return router

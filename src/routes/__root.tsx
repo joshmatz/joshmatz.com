@@ -7,7 +7,7 @@ import {
   Scripts,
   Link,
 } from '@tanstack/react-router'
-import appCss from '~/styles.css?url'
+import appCss from '~/styles.css?inline'
 import { ThemeToggle } from '~/components/ThemeToggle'
 import { NotFound } from '~/components/NotFound'
 
@@ -36,16 +36,17 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: 'icon', type: 'image/svg+xml', href: '/images/favicon.svg' },
-      { rel: 'stylesheet', href: appCss },
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
         crossOrigin: 'anonymous',
       },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=block',
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: 'https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwr7I_FMl_E.woff2',
+        crossOrigin: 'anonymous',
       },
     ],
   }),
@@ -66,7 +67,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `if('scrollRestoration'in history)history.scrollRestoration='manual'`,
+            __html: `if('scrollRestoration'in history)history.scrollRestoration='auto'`,
           }}
         />
         <script
@@ -74,6 +75,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
             __html: `(function(){try{var t=localStorage.getItem('theme')||'system';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','system')}})()`,
           }}
         />
+        <style dangerouslySetInnerHTML={{ __html: appCss }} />
         <HeadContent />
       </head>
       <body className="min-h-screen bg-[var(--color-warm-50)] text-[var(--color-warm-900)] font-serif antialiased">
@@ -131,11 +133,6 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
             </div>
           </footer>
         </div>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s='tsr-scroll-restoration-v1_3';var k=function(){return history.state&&history.state.__TSR_key||location.href};var c=function(){return JSON.parse(sessionStorage.getItem(s)||'{}')};var w=function(){var a=c();var e=a[k()]||(a[k()]={});e.window={scrollX:scrollX||0,scrollY:scrollY||0};sessionStorage.setItem(s,JSON.stringify(a))};var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];var t=n?n.type:performance.navigation&&performance.navigation.type;var r=t==='reload'||t==='back_forward'||t===1||t===2;if(r){var a=c();var e=a[k()]||a[location.href];if(e&&e.window)scrollTo(e.window.scrollX||0,e.window.scrollY||0)}addEventListener('pagehide',w)}catch(e){}})()`,
-          }}
-        />
         <Scripts />
       </body>
     </html>
