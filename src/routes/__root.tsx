@@ -66,7 +66,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `if('scrollRestoration'in history)history.scrollRestoration='auto'`,
+            __html: `if('scrollRestoration'in history)history.scrollRestoration='manual'`,
           }}
         />
         <script
@@ -131,6 +131,11 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
             </div>
           </footer>
         </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s='tsr-scroll-restoration-v1_3';var k=function(){return history.state&&history.state.__TSR_key||location.href};var c=function(){return JSON.parse(sessionStorage.getItem(s)||'{}')};var w=function(){var a=c();var e=a[k()]||(a[k()]={});e.window={scrollX:scrollX||0,scrollY:scrollY||0};sessionStorage.setItem(s,JSON.stringify(a))};var n=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];var t=n?n.type:performance.navigation&&performance.navigation.type;var r=t==='reload'||t==='back_forward'||t===1||t===2;if(r){var a=c();var e=a[k()]||a[location.href];if(e&&e.window)scrollTo(e.window.scrollX||0,e.window.scrollY||0)}addEventListener('pagehide',w)}catch(e){}})()`,
+          }}
+        />
         <Scripts />
       </body>
     </html>
